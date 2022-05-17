@@ -16,7 +16,6 @@ public class Chocolate {
     private int cocoaPercentage;
 
     @ManyToOne
-
     private Estate estate;
 
     public Chocolate(String name, int cocoaPercentage, Estate estate) {

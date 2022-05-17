@@ -11,7 +11,11 @@ import java.util.List;
 public interface ChocolateRepository extends JpaRepository<Chocolate, Long> {
 
 
-        @Query(value = "SELECT * FROM chocolate WHERE id=1",
+        @Query(value = "SELECT * FROM chocolate WHERE id = ?1",
                 nativeQuery = true)
         Chocolate getChocolate(int id);
+
+
+        @Query(value = "SELECT * FROM chocolate WHERE cocoa_percentage>=60",nativeQuery = true)
+        List<Chocolate> getChocCocoa();
 }
